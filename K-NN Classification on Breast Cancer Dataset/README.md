@@ -29,7 +29,7 @@ It includes data analysis, K-NN model building, dimensionality reduction with PC
 - PCA helps reduce dimensionality but may slightly reduce accuracy
 - Full-dimensional K-NN provides higher accuracy, while PCA provides interpretability and visualization
 
-⚙️ Usage
+⚙️ Usage: 
 Run the notebook in Jupyter or Google Colab:
 
 ```bash
