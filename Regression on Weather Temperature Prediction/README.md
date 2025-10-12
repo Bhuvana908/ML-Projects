@@ -1,50 +1,94 @@
-🎯 Regression – Temperature Prediction – Weather Dataset
+# 🌦️ Weather Temperature Prediction using Linear Regression
 
-This repository demonstrates a complete workflow of **Temperature Prediction** using historical weather data.  
-It includes data analysis, feature selection, Linear Regression model building, gradient descent implementation, and visualization of results.
+This project demonstrates how to predict **Temperature (°C)** from historical weather data using both **manual Gradient Descent** and **Scikit-learn Linear Regression**.  
+It combines **data preprocessing, feature selection, model building, and visualization** into one complete machine learning workflow.
 
-📂 Contents
+---
 
-**Data Analysis & Visualization**
-- Data cleaning and preprocessing
-- Handling missing values and duplicates
-- Feature extraction from dates (year, month, day)
-- Correlation heatmap to identify influential features
-- Scatter plots of features vs target (Temperature)
+## 📘 Project Overview
 
-**Linear Regression Models**
-- Manual implementation of **Gradient Descent**
-  - Feature scaling
-  - Training loop with MSE calculation
-- **Sklearn Linear Regression**
-  - Model fitting
-  - Parameter comparison with gradient descent
-- Train/test split and evaluation
-  - Mean Squared Error (MSE)
-  - R² Score
-- Comparison of predictions (train and test sets)
+The goal of this project is to:
+- Explore the **weatherHistory.csv** dataset
+- Identify **key features** that affect temperature
+- Build a **Linear Regression model** using:
+  1. **Manual Gradient Descent**
+  2. **Sklearn’s LinearRegression**
+- Compare both models’ performance using **MSE** and **R² Score**
+- Visualize convergence, feature relationships, and predictions
+- Predict temperature for **new unseen data**
 
-**Visualization**
-- MSE vs Epochs for Gradient Descent vs Sklearn LR
-- Actual vs Predicted Temperature scatter plots
-- Feature vs Target scatter plots
-- Gradient Descent convergence visualization
+---
 
-**Prediction for New Data**
-- Input new weather features
-- Predict temperature using both Gradient Descent and Sklearn Linear Regression
+## 🧠 Key Concepts Covered
 
-📈 Project Insights
-- Both Gradient Descent and Sklearn LR provide similar performance
-- Feature scaling improves Gradient Descent convergence
-- Visualizations help understand feature relationships and model performance
-- Manual Gradient Descent helps understand underlying mechanics of Linear Regression
+- Data Cleaning & Feature Engineering  
+- Correlation Analysis  
+- Gradient Descent Implementation  
+- Linear Regression with Scikit-learn  
+- Model Evaluation (MSE, R² Score)  
+- Data Visualization (Heatmap, Scatter Plots)  
 
-⚙️ Usage: 
-Run the notebook in Jupyter or Google Colab:
+---
 
-```bash
-jupyter notebook K-NN_Classification_on_Breast_Cancer_Dataset.ipynb
+## 🧩 Steps in the Project
 
+### 1️⃣ Data Loading & Cleaning
+- Loaded dataset `weatherHistory.csv`
+- Handled missing values in `'Precip Type'`
+- Converted `'Formatted Date'` to datetime format
+- Extracted **year, month, and day** from dates
+- Dropped irrelevant columns (`Summary`, `Daily Summary`, `Loud Cover`)
+- Encoded categorical variables using **LabelEncoder**
+- Removed duplicates and reset indices
+
+### 2️⃣ Exploratory Data Analysis
+- Plotted **correlation matrix** to find relationships between features  
+- Selected top correlated features with **Temperature (C)**  
+- Created **scatter plots** to visualize feature-target relationships  
+
+### 3️⃣ Linear Regression using Gradient Descent
+- Standardized the data  
+- Implemented Gradient Descent manually using NumPy  
+- Tracked **Mean Squared Error (MSE)** across epochs  
+- Optimized model parameters (`θ`)  
+
+### 4️⃣ Linear Regression using Sklearn
+- Trained `LinearRegression()` model  
+- Compared parameters, predictions, and evaluation metrics with manual Gradient Descent  
+
+### 5️⃣ Model Evaluation
+- Compared both models using:
+  - **Mean Squared Error (MSE)**
+  - **R² Score**
+- Plotted:
+  - MSE vs Epochs (to show convergence)
+  - Actual vs Predicted Temperature (for both methods)
+
+### 6️⃣ Predicting New Data
+Predicted temperature for a new input:  
+`Apparent Temperature = 70`, `Visibility = 10`
+
+Both models provide close predictions, validating correctness.
+
+---
+
+## 📊 Visualizations
+- **Heatmap** of feature correlations  
+- **Scatter plots** of selected features vs Temperature  
+- **MSE convergence curve** (Gradient Descent vs Sklearn)  
+- **Actual vs Predicted Temperature** plots  
+
+---
+
+## 🧮 Results Summary
+
+| Model | Train MSE | Test MSE | Train R² | Test R² |
+|:------|-----------:|----------:|----------:|---------:|
+| Gradient Descent | *≈ small value* | *≈ small value* | *≈ high value* | *≈ high value* |
+| Sklearn Linear Regression | *≈ same as GD* | *≈ same as GD* | *≈ same as GD* | *≈ same as GD* |
+
+✅ Both models achieve **similar performance**, proving the correctness of the manual implementation.
+
+---
 
 
