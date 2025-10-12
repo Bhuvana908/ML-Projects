@@ -84,11 +84,15 @@ Both models provide close predictions, validating correctness.
 
 | Model | Train MSE | Test MSE | Train R² | Test R² |
 |:------|-----------:|----------:|----------:|---------:|
-| Gradient Descent | *≈ small value* | *≈ small value* | *≈ high value* | *≈ high value* |
-| Sklearn Linear Regression | *≈ same as GD* | *≈ same as GD* | *≈ same as GD* | *≈ same as GD* |
+| Gradient Descent | *≈ 1.32* | *≈ 1.32* | *≈ 0.98* | *≈ 0.98* |
+| Sklearn Linear Regression | *≈ 1.32* | *≈ 1.32* | *≈ 0.98* | *≈ 0.98* |
 
 ✅ Both models achieve **similar performance**, proving the correctness of the manual implementation.
 
 ---
+⚙️ Usage: 
+Run the notebook in Jupyter or Google Colab:
 
+```bash
+jupyter notebook Weather_Temperature_Prediction.ipynb
 
