@@ -40,11 +40,11 @@ It includes data analysis, feature selection, Linear Regression model building, 
 - Visualizations help understand feature relationships and model performance
 - Manual Gradient Descent helps understand underlying mechanics of Linear Regression
 
-⚙️ Usage
-1. Open the notebook in **Jupyter Notebook** or **Google Colab**  
-2. Upload `weatherHistory.csv`  
-3. Run all cells sequentially  
-4. Observe data analysis, model training, evaluation metrics, and visualizations  
+⚙️ Usage: 
+Run the notebook in Jupyter or Google Colab:
+
+```bash
+jupyter notebook K-NN_Classification_on_Breast_Cancer_Dataset.ipynb
 
 
 
