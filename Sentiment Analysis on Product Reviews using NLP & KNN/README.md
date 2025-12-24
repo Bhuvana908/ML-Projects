@@ -14,12 +14,23 @@ The pipeline demonstrates how raw text data can be transformed into meaningful n
 
 ## 📂 Dataset
 
-- **Source**: SQLite database (`database.sqlite`)
+- **Source**: Amazon Fine Food Reviews Dataset
+- **Format**: SQLite database (`database.sqlite`)
 - **Table Used**: `Reviews`
-- **Target Variable**: Sentiment  
-  - Rating < 3 → Negative  
-  - Rating ≥ 3 → Positive  
-- Neutral reviews (rating = 3) are excluded to improve class clarity.
+
+Due to GitHub file size limitations, the dataset is **not included directly in this repository**.
+
+🔗 **Download the dataset from Google Drive:**  
+[https://drive.google.com/drive/folders/1bu3AfChWT5yBwLuSMHg757LchFEccq0m?usp=sharing]
+
+After downloading, place the file below in the **project root directory**:
+
+
+### Dataset Description
+- Ratings < 3 → **Negative sentiment**
+- Ratings ≥ 3 → **Positive sentiment**
+- Neutral reviews (rating = 3) are excluded to improve classification clarity
+
 
 ---
 
