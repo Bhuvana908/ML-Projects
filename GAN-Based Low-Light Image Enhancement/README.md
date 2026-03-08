@@ -1,6 +1,6 @@
 # BrightEN — Low-Light Image Enhancement using GANs
 
-> A deep learning system that enhances dark, low-light images using a GAN-based architecture built from scratch in PyTorch.
+> A deep learning system that enhances dark, low-light images using a GAN-based architecture built from scratch in PyTorch, trained on Google Colab.
 
 ---
 
@@ -42,11 +42,9 @@ Takes a dark or underexposed image as input and generates a bright, clear, enhan
 
 - Python
 - PyTorch
-- OpenCV
 - scikit-image
 - Matplotlib
-- Streamlit (web app)
-- Google Colab (training)
+- Google Colab (T4 GPU)
 
 ---
 
@@ -54,16 +52,7 @@ Takes a dark or underexposed image as input and generates a bright, clear, enhan
 
 ```
 BrightEN/
-├── app.py                  # Streamlit web app
-├── lol_generator_v1.pth    # Trained model weights
-├── checkpoints/            # Epoch-wise saved checkpoints
-│   ├── G_epoch_10.pth
-│   ├── G_epoch_20.pth
-│   └── ...
-├── results/                # Sample output images per epoch
-│   ├── epoch_010.png
-│   ├── epoch_020.png
-│   └── ...
+├── BrightEN.ipynb          # Main training notebook (Google Colab)
 └── README.md
 ```
 
@@ -71,41 +60,33 @@ BrightEN/
 
 ## How to Run
 
-### Training (Google Colab)
+### Requirements
+- Google Colab account (T4 GPU recommended)
+- Kaggle account (for dataset download)
 
-**Step 1 — Install dependencies**
+### Step 1 — Open Notebook in Colab
+Upload `BrightEN.ipynb` to Google Colab and set runtime to T4 GPU:
+`Runtime → Change Runtime Type → T4 GPU`
+
+### Step 2 — Install Dependencies
 ```bash
 pip install torch torchvision opencv-python scikit-image matplotlib
 ```
 
-**Step 2 — Download dataset**
+### Step 3 — Download Dataset
 ```bash
 pip install kaggle
 kaggle datasets download -d soumikrakshit/lol-dataset
 unzip lol-dataset.zip -d data/
 ```
 
-**Step 3 — Run training**
-Copy and run all cells in order. Training runs for 100 epochs on the LOL dataset and saves checkpoints every 10 epochs.
+### Step 4 — Run All Cells
+Run cells in order. Training runs for 100 epochs and saves:
+- Checkpoints every 10 epochs → `checkpoints/`
+- Sample comparison images every 10 epochs → `results/`
 
----
-
-### Web App (Streamlit)
-
-**Run locally**
-```bash
-pip install streamlit torch torchvision pillow
-streamlit run app.py
-```
-
-**Run on Colab**
-```python
-!pip install streamlit pyngrok
-from pyngrok import ngrok
-!streamlit run app.py &
-public_url = ngrok.connect(8501)
-print("App URL:", public_url)
-```
+### Step 5 — Enhance a Single Image
+The last cell in the notebook loads the trained model and enhances a single low-light image, displaying the original vs enhanced comparison.
 
 ---
 
@@ -139,7 +120,7 @@ U-Net Generator ──► Enhanced Image
 2. Discriminator checks if enhanced image looks real
 3. Both compete — generator keeps improving
 4. After 100 epochs — generator produces realistic bright images
-
+   
 ---
 
 ## Author
